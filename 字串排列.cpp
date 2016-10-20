@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include <ctype.h>
-void transfer(char str[],int length,int num);
+void transfer(char str[],int length,int num[]);
 int main(void){
 	int i;
 	char str[1000];
