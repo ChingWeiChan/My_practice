@@ -1,4 +1,4 @@
-
+﻿
 /*
 
 Osi  7層網路架構
@@ -16,6 +16,9 @@ http://140.129.118.16/~richwang/99-2-Courses/About_C_PointerAdvanced.pdf
 Call by address v.s Call by value
 http://wp.mlab.tw/?p=176
 
-
+中序式 後序式 四則運算 
+https://market.cloud.edu.tw/content/senior/computer/ks_ks/et/datastruct/compute/compute.htm
+http://openhome.cc/Gossip/AlgorithmGossip/InFixPostfix.htm
+http://openhome.cc/Gossip/AlgorithmGossip/PostfixCal.htm
 
 */
