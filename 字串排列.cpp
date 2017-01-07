@@ -22,7 +22,7 @@ int main(void){
 	for(i=0;i<length;i++){
 		tmp=0;
 		if(ispunct(str[i])){
-		   	temp=i;
+		   	tmp=i;
 			   for(j=0;j<i;j++){
 			   	  num[j]=(str[i-j-1]-48)*i;
 			   }	
