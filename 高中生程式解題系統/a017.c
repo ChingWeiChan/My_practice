@@ -14,7 +14,7 @@ int main(void) {
 	cut=strtok(arr, space);
 	strcpy(tmp[i],cut);
 	while(cut!=NULL) {
-		printf("%d : %s\n",i,tmp[i]);
+		printf("%d : %s\n",i,tmp[i]);   //test
 		cut=strtok(NULL,space);
 		if (cut!=NULL) {
 			strcpy(tmp[++i],cut);
@@ -35,18 +35,40 @@ int main(void) {
 			case'/':
 				if(tmp[i-2][0]=='/') {
 					sum/=atoi(tmp[i+1]);
-				} else{
-				sum+=atoi(tmp[i-1])/atoi(tmp[i+1]);
-				 }
+				} else {
+					sum+=atoi(tmp[i-1])/atoi(tmp[i+1]);
+				}
 				break;
 			case'%':
 				sum+=atoi(tmp[i-1])%atoi(tmp[i+1]);
 				break;
 			case'+':
-				sum+=atoi(tmp[i+1]);
+				if(tmp[i+2][0]!='*' && tmp[i+2][0]!='/') {
+					if(i==1) {
+						sum+=atoi(tmp[i-1])+atoi(tmp[i+1]);
+					} else {
+						sum+=atoi(tmp[i+1]);
+					}
+				} else {
+					if(i==1) {
+						sum+=atoi(tmp[i-1]);
+					}
+				}
+
 				break;
 			case'-':
-				sum-=atoi(tmp[i+1]);
+				if(tmp[i+2][0]!='*' && tmp[i+2][0]!='/') {
+
+					if(i==1) {
+						sum+=atoi(tmp[i-1])-atoi(tmp[i+1]);
+					} else {
+						sum-=atoi(tmp[i+1]);
+					}
+				}else{
+					if(i==1) {
+						sum+=atoi(tmp[i-1]);
+					}
+				}
 				break;
 		}
 
