@@ -1,6 +1,4 @@
 /*  20170214   */
-
-/*TLE....*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
