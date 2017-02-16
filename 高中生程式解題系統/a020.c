@@ -1,14 +1,14 @@
 /*  20170214   */
 
 /*TLE....*/
+/* 20170216 think:function  describes too long.*/
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
 int transfer(char);
 int main(void) {
 	char num[11];
 	int sum=0,i,j=0;
-	while(gets(num)!=EOF){
+	while(scanf("%c%d%d%d%d%d%d%d%d%d\n",&num[0],&num[1],&num[2],&num[3],&num[4],&num[5],&num[6],&num[7],&num[8],&num[9])!=EOF){
 	
 		sum+=transfer(num[0]);
 		for(i=8; i>0; i--) {
