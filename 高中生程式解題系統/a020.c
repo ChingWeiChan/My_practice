@@ -8,8 +8,15 @@ int transfer(char);
 int main(void) {
 	char num[11];
 	int sum=0,i,j=0;
-	while(scanf("%c%d%d%d%d%d%d%d%d%d\n",&num[0],&num[1],&num[2],&num[3],&num[4],&num[5],&num[6],&num[7],&num[8],&num[9])!=EOF){
-	
+	while(scanf(" %c",&num[0])!=EOF){   
+	/*key: before the %c need to add space 
+	Introduction:
+	http://squall.cs.ntou.edu.tw/cprog/Materials/ScanfIntroduction.html
+	如果 % 之前加一空格的話代表跳過所有空格 (TAB、 space、 及 Enter) 字元，例如：
+    char c;
+    scanf("　%c",&c);
+	*/
+		scanf("%c%c%c%c%c%c%c%c%c",&num[1],&num[2],&num[3],&num[4],&num[5],&num[6],&num[7],&num[8],&num[9]);
 		sum+=transfer(num[0]);
 		for(i=8; i>0; i--) {
 			sum+=(num[++j]-48)*i;
@@ -17,11 +24,12 @@ int main(void) {
 		sum+=num[9]-48;
 		if(sum%10==0) {
 			printf("real\n");
-		} else {
+		} else{
 			printf("fake\n");
 		}
 	    sum=0;
 		j=0;
+		
 	} 
 		return 0;
 	}
@@ -60,7 +68,7 @@ int transfer(char head) {
 		case'K':
 			return 1+9*9;
 			break;
-		case'l':
+		case'L':
 			return 2+0*9;
 			break;
 		case'M':
