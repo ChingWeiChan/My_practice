@@ -40,7 +40,7 @@ int main(int argc, char const *argv[]) {
                 sum=0; j=8;
                 for(i=0; i<9; i++)
                         sum+=(*(num+i)-48)*(j--);
-              
+
                 for (i=0; i<26; i++) {
                         if(10-(trys[i].num+sum)%10==*(num+8)-48)
                                 printf("%c",trys[i].word);
