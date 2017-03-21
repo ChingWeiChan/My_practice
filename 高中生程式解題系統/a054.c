@@ -38,11 +38,14 @@ int main(int argc, char const *argv[]) {
         int i,j,sum;
         while (scanf(" %s",&num)!=EOF) {
                 sum=0; j=8;
-                for(i=0; i<9; i++)
+                for(i=0; i<8; i++) {
+
                         sum+=(*(num+i)-48)*(j--);
 
+
+                }
                 for (i=0; i<26; i++) {
-                        if(10-(trys[i].num+sum)%10==*(num+8)-48)
+                   if((*(num+8)-48+trys[i].num+sum)%10==0)
                                 printf("%c",trys[i].word);
                 }
                 printf("\n");
