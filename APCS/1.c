@@ -3,7 +3,7 @@
 int main(int argc, char const *argv[]) {
         int i,j,k,sc[100],max,min,flag=0,tmp;
         scanf("%d",&i);
-        for(j=0; j<i; j++) {
+                                 for(j=0; j<i; j++) {
                 scanf("%d",&sc[j] );
                 if(sc[j]>60 && flag==0) {
                         max=sc[j];

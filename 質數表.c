@@ -4,14 +4,14 @@
 /*
 int main(void) {
 	int i,j,k=0,m=0;  //LOOP
-	int max;  //範圍之最大值
+	int max;  //maxium
 	printf("Please input the maxium:");
 	scanf("%d",&max);
 		for(i=2; i<=max; i++) {
 		for(j=2; j<i; j++) {
-			if(i%j==0 && i>2){ 
+			if(i%j==0 && i>2){
 			  k++;
-		      break;	   
+		      break;
 			}
 			}
 			if(k!=0){
@@ -28,10 +28,10 @@ int main(void) {
 /*
 int main(void) {
 	int i,j,total;  //LOOP
-	int max;  //範圍之最大值
+	int max;  //maxium
 	printf("Please input the maxium:");
 	scanf("%d",&max);
-	
+
 	total=1;
 	printf("2\n");
 		for(i=3; i<=max; i++) {
@@ -39,7 +39,7 @@ int main(void) {
 		if(j==i){
 			total++;
 			printf("%d\n",i);
-		}	   
+		}
 		}
 		printf("Total : %d\n",total);
 	return 0;
@@ -47,19 +47,21 @@ int main(void) {
 */
 int main(void) {
 	int i,j,k,total;  //LOOP
-	int max;  //範圍之最大值
-	int prime[10000]; //prime
+	int max;  //maxium
+	int prime[100000]; //prime
 	printf("Please input the maxium:");
 	scanf("%d",&max);
-	
+
 	total=1;
 	prime[1]=2;
-		for(i=3; i<=max; i++) {
+		for(i=3; i<=max; i++) 
+		{
 		for(j=1; j<=total; j++) if(i%prime[j]==0)break;
-		if(j>total){
+		if(j>total)
+		{
 			total++;
 			prime[total]=i;
-		}	   
+		}
 		}
 	for(k=1;k<=total;k++){
 		printf("%d\n",prime[k]);
@@ -67,8 +69,3 @@ int main(void) {
 	printf("Total: %d \n",total);
 	return 0;
 }
-
-
-
-
-
