@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+/*
 void split(char **arr,char *str, const char *del) {
         char *s=strtok(str, del);
         int count=0;
@@ -31,4 +32,16 @@ int main(int argc, char const *argv[]) {
 
         }
         return 0;
+}*/
+int main(int argc, char const *argv[]) {
+  int a[100];
+  // int i=0;
+  for (size_t i = 0; i < 100; i++)
+    scanf("%d",&a[i]);
+
+  for (size_t i = 0; i < 100; i++) {
+    printf("%d\n",a[i] );
+  }
+  
+  return 0;
 }
