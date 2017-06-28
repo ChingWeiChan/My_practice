@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 url=[]
 total=[]
 i=0
-dict1={"學務處":0,"教務處":0,"體育組":0,"圖書組":0,"註冊組":0,"體育組":0,"應外科":0,"輔導室":0}
+dict1={"學務處":0,"教務處":0,"體育組":0,"圖書組":0,"註冊組":0,"體育組":0,"應外科":0,"輔導室":0,"設備組":0,"教學組":0}
 listkey=list(dict1.keys())
 for num in range(1,7):
     url.append("http://www.ytjh.ylc.edu.tw/news/3?page={}".format(num))

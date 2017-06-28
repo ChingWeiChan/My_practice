@@ -42,13 +42,13 @@
 
  */
 
- /*
 
 
+/*
  ===================================================
  still TLE.....OH MY GOD.........
-
  ===================================================
+ */
 int prime_find(int,int*);
 int main(int argc, char const *argv[]) {
         int min,max;
@@ -82,4 +82,3 @@ int  prime_find(int num,int *re){
         }
         return total;
 }
-*/
