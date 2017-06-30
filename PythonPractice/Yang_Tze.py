@@ -49,7 +49,7 @@ def visitor(xticks):
        j+=1
     plt.xticks(xticks,listkey)
     plt.title("%s 揚子中學各處室網頁點閱總人數" %(time.strftime("%m/%d")))
-    plt.savefig("visitor.png",dpi=300,format="png")
+    plt.savefig("%s_visitor.png" %(time.strftime("%m_%d")),dpi=300,format="png")
 def article(xticks):
     plt.figure(2)
     plt.bar(xticks,list2_value)
@@ -61,7 +61,7 @@ def article(xticks):
     
     plt.xticks(xticks,listkey)
     plt.title("%s 揚子中學各處室網頁文章數" %(time.strftime("%m/%d")))
-    plt.savefig("article.png",dpi=300,format="png")
+    plt.savefig("%s_article.png"%(time.strftime("%m_%d")),dpi=300,format="png")
 plt.figure(1)
 plt.figure(2)
 visitor(xticks)
