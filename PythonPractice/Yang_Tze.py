@@ -3,16 +3,35 @@ import requests,re,time
 import matplotlib.pyplot as plt
 import numpy as np
 from bs4 import BeautifulSoup
-url=[]
+url=[]     #判斷總頁數
+url_12=[]  #dict1 dict2
+url_34=[]  #dict3 dict4
 total=[]
 i=0
-dict1={"學務處":0,"教務處":0,"體育組":0,"圖書組":0,"註冊組":0,"體育組":0,"應外科":0,"輔導室":0} #總人數
-dict2={"學務處":0,"教務處":0,"體育組":0,"圖書組":0,"註冊組":0,"體育組":0,"應外科":0,"輔導室":0}                                                                                         #總文章數
+
+def define():
+    dict_1={"學務處":0,"教務處":0,"圖書組":0,"註冊組":0,"應外科":0,"輔導室":0}
+    return dict_1
+
+dict1=define() #榮譽榜總人數
+dict2=define() #榮譽榜總文章數
+dict3=define() #訊息公告總人數
+dict4=define() #訊息公告文章數
+#判斷該共有幾頁
+'''
+for i in range(1,4):
+    url.append("http://www.ytjh.ylc.edu.tw/news/%d"%i)
+    html=requests.get(url[i-1])
+    html_bp=BeautifulSoup(html.text,'html.parser')
+    data_1=html_bp.find(id='searchForm')
+    
+            '''
+            
 listkey=list(dict1.keys())
-for num in range(1,7):
-    url.append("http://www.ytjh.ylc.edu.tw/news/3?page={}".format(num))
+for num in range(1,9):
+    url_12.append("http://www.ytjh.ylc.edu.tw/news/3?page={}".format(num))
     #print(url[num-1])
-    html=requests.get(url[num-1])
+    html=requests.get(url_12[num-1])
     html_bp=BeautifulSoup(html.text,'html.parser')
     
     #print(str(html_bp))
@@ -48,7 +67,7 @@ def visitor(xticks):
        plt.text(j,i+100,"%d"%i,horizontalalignment='center')
        j+=1
     plt.xticks(xticks,listkey)
-    plt.title("%s 揚子中學各處室網頁點閱總人數" %(time.strftime("%m/%d")))
+    plt.title("%s 揚子中學榮譽榜各處室網頁點閱總人數" %(time.strftime("%m/%d")))
     plt.savefig("%s_visitor.png" %(time.strftime("%m_%d")),dpi=300,format="png")
 def article(xticks):
     plt.figure(2)
@@ -58,9 +77,8 @@ def article(xticks):
     for i in list2_value:
        plt.text(j,i+2,"%d"%i,horizontalalignment='center')
        j+=1
-    
     plt.xticks(xticks,listkey)
-    plt.title("%s 揚子中學各處室網頁文章數" %(time.strftime("%m/%d")))
+    plt.title("%s 揚子中學榮譽榜各處室網頁文章數" %(time.strftime("%m/%d")))
     plt.savefig("%s_article.png"%(time.strftime("%m_%d")),dpi=300,format="png")
 plt.figure(1)
 plt.figure(2)
