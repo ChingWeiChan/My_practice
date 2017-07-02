@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 /*
-====================================================
+   ====================================================
    in zerojudge:TLE
    I don't know what happen.
    I think it's the array too big.
-====================================================
+   ====================================================
 
    int* prime_find(int);
    int main(int argc, char const *argv[]) {
@@ -42,6 +42,7 @@
 
  */
 
+<<<<<<< HEAD
 
 
 /*
@@ -50,34 +51,45 @@
  ===================================================
  */
 int prime_find(int,int*);
+=======
+/*
+   ===================================================
+   still TLE.....OH MY GOD.........
+
+   ===================================================
+ */
+int prime_find(int,int*,int);
+>>>>>>> origin/master
 int main(int argc, char const *argv[]) {
         int min,max;
         while (scanf("%d %d",&min,&max)!=EOF) {
-                int *repeat;
-                int a=0;
-                repeat=&a;
-                int max_prime=prime_find(max,repeat);
-                int min_prime=prime_find(min,repeat);
-                printf("%d\n",max_prime-min_prime);
+                int final;
+                int min_prime=prime_find(min,&final,0);
+                printf("%d\n",final);
+                int max_prime=prime_find(max,&final,1);
+                printf("end: %d\n",max_prime-min_prime);
         }
         return 0;
 }
-int  prime_find(int num,int *re){
+int prime_find(int num,int* final,int _time){
         int total=0,tmp;
-        for (int i=2; i<=num; i++) {
+        int i,j;
+        for (i=2; i<=num; i++) {
                 tmp=0;
-                for (int j = 2; j <i; j++) {
+                for (j = 2; j*j <i; j++) {
                         if (i%j==0) {
                                 tmp++;
                                 break;
                         }
                 }
                 if(tmp==0) {
+                      if (_time==0) {
+                        *final=i;
+                      }
+                    else if (*final==i) {
                         total++;
-                        if(i==num && *re==0) {
-                                total++;
-                                *re+=1;
-                        }
+                      }
+                        total++;
                 }
         }
         return total;
