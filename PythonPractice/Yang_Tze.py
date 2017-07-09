@@ -65,7 +65,7 @@ xticks=np.arange(len(listkey))+1
 def visitor(xticks):
     plt.figure(1)               
     plt.bar(xticks,list1_value,align='center')
-    plt.ylim(0,10000)
+    plt.ylim(0,15000)
     j=1
     for i in list1_value:
        plt.text(j,i+100,"%d"%i,horizontalalignment='center')
