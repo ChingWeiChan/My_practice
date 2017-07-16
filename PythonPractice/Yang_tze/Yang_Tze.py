@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 import requests,re,time
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,9 +8,7 @@ url_12=[]  #dict1 dict2
 url_34=[]  #dict3 dict4
 total=[]
 i=0
-<<<<<<< HEAD
 dict1={"學務處":0,"教務處":0,"體育組":0,"圖書組":0,"註冊組":0,"體育組":0,"應外科":0,"輔導室":0,"設備組":0,"教學組":0}
-=======
 
 def define():
     dict_1={"學務處":0,"教務處":0,"圖書組":0,"註冊組":0,"應外科":0,"輔導室":0}
@@ -18,19 +16,7 @@ def define():
 
 dict1=define() #榮譽榜總人數
 dict2=define() #榮譽榜總文章數
-dict3=define() #訊息公告總人數
-dict4=define() #訊息公告文章數
-#判斷該共有幾頁
-'''
-for i in range(1,4):
-    url.append("http://www.ytjh.ylc.edu.tw/news/%d"%i)
-    html=requests.get(url[i-1])
-    html_bp=BeautifulSoup(html.text,'html.parser')
-    data_1=html_bp.find(id='searchForm')
-    
-            '''
-            
->>>>>>> origin/master
+        
 listkey=list(dict1.keys())
 for num in range(1,9):
     url_12.append("http://www.ytjh.ylc.edu.tw/news/3?page={}".format(num))
@@ -61,6 +47,9 @@ for i in range(len(listkey)):
         print("%s : %d" % (listkey[i],list1_value[i]))
 
 #------------draw picture---------------------------------------------------------------------------------
+import matplotlib.font_manager
+matplotlib.font_manager.findSystemFonts(fontpaths=None)
+plt.rcParams["font.family"]="Microsoft JhengHei"
 xticks=np.arange(len(listkey))+1
 def visitor(xticks):
     plt.figure(1)               
